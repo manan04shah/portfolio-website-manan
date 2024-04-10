@@ -205,8 +205,8 @@ body {
 
 @media (max-width: 767px) { /* Adjust the max-width to target phone screens */
     .box {
-        height: 220px;
-        width: 220px;
+        height: 25vh;
+        width: 25vh;
     }
 }
 
