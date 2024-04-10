@@ -29,7 +29,7 @@ export default function Landing() {
                 </div>
                 <div className="highlight-text flex">
                     <h1 className="text-4xl md:text-[4.5vw] font-bold pb-5 md:py-5 leading-snug">
-                        Hi! I'm Manan - A {word}
+                        Hi! I&apos;m Manan - A {word}
                         <Cursor cursorStyle="|" />
                     </h1>
                 </div>
