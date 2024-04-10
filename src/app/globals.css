@@ -2,32 +2,269 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --color-bg1: rgb(0, 0, 0);
+    --color-bg2: rgb(1, 7, 31);
+    --color1: 18, 113, 255;
+    --color2: 221, 74, 255;
+    --color3: 100, 220, 255;
+    --color4: 200, 50, 50;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 80%;
+    --blending: hard-light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    background-color: black;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    color: white;
+    margin: 0;
+    padding: 0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%);
+    }
+    50% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.gradient-bg {
+    position: absolute;
+    background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+    top: 0;
+    left: 0;
+
+    svg {
+        display: none;
+    }
+
+    .gradients-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .g1 {
+        position: absolute;
+        background: radial-gradient(
+                circle at center,
+                rgba(var(--color1), 0.8) 0,
+                rgba(var(--color1), 0) 50%
+            )
+            no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: center center;
+        animation: moveVertical 30s ease infinite;
+
+        opacity: 1;
+    }
+
+    .g2 {
+        position: absolute;
+        background: radial-gradient(
+                circle at center,
+                rgba(var(--color2), 0.8) 0,
+                rgba(var(--color2), 0) 50%
+            )
+            no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+
+        opacity: 1;
+    }
+
+    .g3 {
+        position: absolute;
+        background: radial-gradient(
+                circle at center,
+                rgba(var(--color3), 0.8) 0,
+                rgba(var(--color3), 0) 45%
+            )
+            no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2 + 200px);
+        left: calc(50% - var(--circle-size) / 2 - 500px);
+
+        transform-origin: calc(50% + 400px);
+        animation: moveInCircle 40s linear infinite;
+
+        opacity: 1;
+    }
+
+    .g4 {
+        position: absolute;
+        background: radial-gradient(
+                circle at center,
+                rgba(var(--color4), 0.8) 0,
+                rgba(var(--color4), 0) 50%
+            )
+            no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 200px);
+        animation: moveHorizontal 40s ease infinite;
+
+        opacity: 1;
+    }
+
+    .g5 {
+        position: absolute;
+        background: radial-gradient(
+                circle at center,
+                rgba(var(--color5), 0.8) 0,
+                rgba(var(--color5), 0) 50%
+            )
+            no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: calc(var(--circle-size) * 2);
+        height: calc((--circle-size) * 2);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 800px) calc(50% + 200px);
+        animation: moveInCircle 20s ease infinite;
+
+        opacity: 1;
+    }
+}
+
+/* Following are styles for the image blob */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.box {
+    background: url("/manan-image-3.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    height: 350px;
+    width: 350px;
+    box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
+    animation: animate 5s ease-in-out infinite;
+    transition: all 1s ease-in-out;
+}
+
+@media (max-width: 767px) { /* Adjust the max-width to target phone screens */
+    .box {
+        height: 220px;
+        width: 220px;
+    }
+}
+
+@keyframes animate {
+    0% {
+        border-radius: 60% 40% 30% 70%/60% 30% 40% 70%;
+    }
+    25% {
+        border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+    }
+    50% {
+        border-radius: 70% 30% 60% 30%/30% 40% 70% 40%;
+    }
+    75% {
+        border-radius: 50% 50% 45% 60%/70% 50% 40% 60%;
+    }
+    100% {
+        border-radius: 60% 40% 30% 70%/60% 30% 40% 70%;
+    }
+}
+
+/* For the landing page text type effect */
+.word {
+    display: block;
+}
+
+.word span {
+    color: #ff5252;
+    position: relative;
+}
+
+.word span::after {
+    content: "";
+    width: 8px;
+    height: 100%;
+    background: #ff5252;
+    display: block;
+    position: absolute;
+    right: -10px;
+    top: 0;
+    animation: blink 0.5s ease infinite alternate-reverse;
+}
+
+@keyframes blink {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+    }
+}
+
+.word.empty {
+    visibility: hidden;
+}
+
+.word.empty span::after {
+    visibility: visible;
+    right: 0;
 }
