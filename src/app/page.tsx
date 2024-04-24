@@ -2,6 +2,8 @@ import Image from "next/image";
 import Landing from "./components/landing";
 import Background from "./components/background";
 import Navbar from "./components/navbar";
+import SkillBox from "./components/skill-box";
+import Skills from "./components/skills";
 
 export default function Home() {
     return (
@@ -9,6 +11,7 @@ export default function Home() {
             <Background />
             <Navbar />
             <Landing />
+            <Skills />
         </div>
     );
 }

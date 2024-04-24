@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full z-20 h-[10vh]">
+    <div className="absolute top-0 left-0 w-full z-20 h-[10vh]">
       <div className="flex justify-between items-center p-5 px-10">
         <div className="logo">
           <p className="text-2xl font-bold">Manan.</p>
@@ -50,15 +50,15 @@ const Navbar = () => {
           <a className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
             Home
           </a>
-          <p className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
+          <a href='#about' className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
             About
-          </p>
-          <p className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
+          </a>
+          <a className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
             Projects
-          </p>
-          <p className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
+          </a>
+          <a className="relative cursor-pointer hover:underline hover:-translate-y-1 transition-all duration-300">
             Contact
-          </p>
+          </a>
         </div>
       </div>
       {/* Collapsible Menu */}
@@ -89,9 +89,9 @@ const Navbar = () => {
             </svg>
           </div><br></br>
           <a className="block mb-4">Home</a>
-          <p className="block mb-4">About</p>
-          <p className="block mb-4">Projects</p>
-          <p className="block mb-4">Contact</p>
+          <a href='#about' className="block mb-4">About</a>
+          <a className="block mb-4">Projects</a>
+          <a className="block mb-4">Contact</a>
         </div>
       </div>
     </div>

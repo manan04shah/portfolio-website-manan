@@ -5,7 +5,6 @@ import ImageBlob from "./image-blob";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-
 export default function Landing() {
     const [word] = useTypewriter({
         words: ["Student", "Learner", "Developer"],
@@ -28,19 +27,25 @@ export default function Landing() {
                     <p>Welcome to my Portfolio</p>
                 </div>
                 <div className="highlight-text flex">
-                    <h1 className="text-4xl md:text-[4.5vw] font-bold pb-5 md:py-5 leading-snug">
-                        Hi! I&apos;m Manan - A {word}
+                    <h1 className="text-3xl md:text-[4.5vw] font-bold pb-5 md:py-5 leading-snug">
+                        Hi! I&apos;m Manan - A<br></br>
+                        {word}
                         <Cursor cursorStyle="|" />
                     </h1>
                 </div>
-                <div className="about-me">
+                <div className="about-me" id="about">
                     <p>
-                    I specialize in Full Stack Development, with a keen interest in Machine Learning and Artificial Intelligence.<br></br><br></br>
-                    I thrive on the exhilarating pace of change. What sets me apart? A relentless thirst for knowledge. In a world where staying stagnant is a recipe for obsolescence, I aim to constantly keep moving, keep adapting, and most importantly - keep learning and growing.
-                    
+                        I specialize in Full Stack Development, with a keen
+                        interest in Machine Learning and Artificial
+                        Intelligence.<br></br>
+                        <br></br>I thrive on the exhilarating pace of change.
+                        What sets me apart? A relentless thirst for knowledge.
+                        In a world where staying stagnant is a recipe for
+                        obsolescence, I aim to constantly keep moving, keep
+                        adapting, and most importantly - keep learning and
+                        growing.
                     </p>
                 </div>
-                
 
                 <div className="projects flex mt-10">
                     <p className="mr-2 font-bold">My Projects</p>
