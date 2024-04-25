@@ -37,7 +37,7 @@ const SkillBox: React.FC<SkillBoxProps> = ({
                     width={50}
                     quality={100}
                     alt={`${skillName} icon`}
-                    className="transition-transform duration-300 group-hover:scale-110"
+                    className="transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.7)]"
                 />
             </div>
         </div>

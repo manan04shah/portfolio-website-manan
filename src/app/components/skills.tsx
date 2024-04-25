@@ -30,7 +30,7 @@ const Skills = () => {
     };
 
     return (
-        <div className="z-10 relative flex p-6 mt-10 md:mt-0 md:flex-row flex-col">
+        <div className="z-10 relative flex p-6 mt-10 md:flex-row flex-col" id="skills">
             <div className="relative z-10 flex flex-col justify-start items-baseline w-full order-2 md:order-1 md:w-[60vw] p-4">
                 <h1 className="font-semibold">Languages</h1>
                 <div className="languages flex flex-wrap">

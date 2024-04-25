@@ -4,6 +4,7 @@ import React from "react";
 import ImageBlob from "./image-blob";
 import Image from "next/image";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { saveAs } from 'file-saver';
 
 export default function Landing() {
     const [word] = useTypewriter({
@@ -14,7 +15,15 @@ export default function Landing() {
         delaySpeed: 2000,
     });
 
+    const downloadResume = () => {
+        saveAs(
+            "/mananShahResume22042024.pdf",
+            "MananShahResume.pdf"
+        );
+    };
+
     return (
+        
         <div className="z-10 relative flex h-full w-full flex-col md:flex-row pt-[10vh]">
             <div className="left-side w-full md:w-[60vw] flex flex-col h-full md:justify-center align-middle p-10 md:order-1 order-2">
                 <div
@@ -47,12 +56,12 @@ export default function Landing() {
                     </p>
                 </div>
 
-                <div className="projects flex mt-10">
-                    <p className="mr-2 font-bold">My Projects</p>
+                <div className="download flex mt-10 cursor-pointer underline" onClick={downloadResume}>
+                    <p className="mr-2 font-bold">Download my resume</p>
                     <Image
-                        src="/arrow.png"
-                        width={25}
-                        height={25}
+                        src="/download.svg"
+                        width={15}
+                        height={15}
                         alt="Arrow"
                     />
                 </div>
