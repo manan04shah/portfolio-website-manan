@@ -45,14 +45,14 @@ const Contact: React.FC = () => {
             id="contact"
         >
             <div className="contact-info w-full md:w-1/2 px-2 md:pr-10">
-                <h1 className="text-5xl font-bold mb-5">Let's chat.</h1>
-                <p className="text-md mb-2">
-                    I'd love to hear from you! Whether you have a question, want
+                <h1 className="text-5xl font-bold mb-5">Let&apos;s chat.</h1>
+                <p className="text-md">
+                    I&apos;d love to hear from you! Whether you have a question, want
                     to discuss a project, or simply want to connect, feel free
                     to reach out to me using the contact form.
                 </p>
                 <div className="contact-direct">
-                    <div className="email flex mt-2 items-center">
+                    <div className="email flex mt-5 items-center">
                         <Image
                             src="/email.svg"
                             width={30}
