@@ -1,12 +1,18 @@
+"use client";
+
 import Landing from "./components/landing";
 import Background from "./components/background";
 import Navbar from "./components/navbar";
 import Skills from "./components/skills";
 import Contact from "./components/contact";
+import { motion, useScroll } from "framer-motion";
 
 export default function Home() {
+    const { scrollYProgress } = useScroll();
+
     return (
         <div className="w-full h-dvh z-0">
+            <motion.div style={{ scaleX: scrollYProgress }} className="progress-bar" />
             <Background />
             <Navbar />
             <Landing />

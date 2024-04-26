@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
     --color-bg1: rgb(0, 0, 0);
     --color-bg2: rgb(1, 7, 31);
@@ -203,7 +201,8 @@ body {
     transition: all 1s ease-in-out;
 }
 
-@media (max-width: 767px) { /* Adjust the max-width to target phone screens */
+@media (max-width: 767px) {
+    /* Adjust the max-width to target phone screens */
     .box {
         height: 25vh;
         width: 25vh;
@@ -267,4 +266,31 @@ body {
 .word.empty span::after {
     visibility: visible;
     right: 0;
+}
+
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #000000;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    background-color: #aaaaaa;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+}
+
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: red;
+    transform-origin: 0%;
+    z-index: 20;
 }
