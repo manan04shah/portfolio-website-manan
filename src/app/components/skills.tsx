@@ -39,6 +39,7 @@ const Skills = () => {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                     variants={{
                         hidden: {
                             scale: 0.9,
@@ -116,6 +117,7 @@ const Skills = () => {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                     variants={{
                         hidden: {
                             scale: 0.9,
@@ -186,6 +188,7 @@ const Skills = () => {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                     variants={{
                         hidden: {
                             scale: 0.9,
@@ -228,6 +231,7 @@ const Skills = () => {
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
+                    viewport={{ once: true }}
                     variants={{
                         hidden: {
                             scale: 0.9,

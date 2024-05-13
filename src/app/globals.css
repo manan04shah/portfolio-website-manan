@@ -289,8 +289,10 @@ body::-webkit-scrollbar-thumb {
     top: 0;
     left: 0;
     right: 0;
-    height: 10px;
-    background: red;
+    height: 3px;
+    background: white;
+    opacity: 1;
     transform-origin: 0%;
     z-index: 20;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
 }
